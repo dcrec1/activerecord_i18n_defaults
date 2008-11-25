@@ -1,4 +1,5 @@
 aa-BB:
+  hey: 'jo'
   activerecord:
     global-attributes:
       login: "global login"

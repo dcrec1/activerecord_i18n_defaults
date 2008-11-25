@@ -19,5 +19,9 @@ describe I18n do
     default_value = 'ew igfwej giowewe'
     I18n.t('im.do.not.exist', :default => default_value).should eql(default_value)
   end
+  
+  it "should not lost the feature of working with symbols" do
+    I18n.t(:hey).should eql("jo")
+  end
 
 end

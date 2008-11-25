@@ -4,13 +4,13 @@ ActiveRecord i18n Defaults is a Rails 2.2 plugin that lets you define translatio
 
 h2. INSTALLATION
 
-[code]script/plugin install git@github.com:dcrec1/activerecord_i18n_defaults.git[/code]
+<code>script/plugin install git@github.com:dcrec1/activerecord_i18n_defaults.git</code>
 
 h2. USAGE
 
 Define your ActiveRecord default attributes like this:
 
-[code]en-US:
+<code>en-US:
   activerecord:
     global-attributes:
       login: "Login"
@@ -18,7 +18,7 @@ Define your ActiveRecord default attributes like this:
       admin:
         login: "Custom Login"
       user:
-        name: "Name"[code]
+        name: "Name"</code>
 
 Then use the I18n API as usual. If an attribute for a model is not found, it will be searched in the global attributes.
 

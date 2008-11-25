@@ -1,0 +1,7 @@
+aa-BB:
+  activerecord:
+    global-attributes:
+      login: "global login"
+    attributes:
+      admin:
+        login: "custom login"

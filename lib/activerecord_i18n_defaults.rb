@@ -1,17 +1,15 @@
-module I18n
+ActiveRecord::Base.class_eval do
 
-  class << self
-    def translate(key, options = {})
-      locale = options.delete(:locale) || I18n.locale
-      if options[:default].nil? && key.to_s.include?("activerecord.attributes.")
-        options[:default] = "activerecord.global-attributes.#{key.to_s.split(".").last}".to_sym
-      end
-      backend.translate(locale, key, options)
-    rescue I18n::ArgumentError => e
-      raise e if options[:raise]
-      send(@@exception_handler, e, locale, key, options)
-    end
-    alias :t :translate
-  end
-  
+   def self.human_attribute_name(attribute_key_name, options = {})
+     defaults = self_and_descendents_from_active_record.map do |klass|
+       :"#{klass.name.underscore}.#{attribute_key_name}"
+     end
+     defaults << "_all.#{attribute_key_name.to_s}".to_sym
+     defaults << options[:default] if options[:default]
+     defaults.flatten!
+     defaults << attribute_key_name.humanize
+     options[:count] ||= 1
+     I18n.translate(defaults.shift, options.merge(:default => defaults, :scope => [:activerecord, :attributes]))
+   end
+
 end

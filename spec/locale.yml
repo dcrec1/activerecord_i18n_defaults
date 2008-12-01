@@ -1,8 +1,8 @@
 aa-BB:
   hey: 'jo'
   activerecord:
-    global-attributes:
-      login: "global login"
     attributes:
+      _all:
+        login: "global login"
       admin:
         login: "custom login"

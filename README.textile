@@ -14,15 +14,15 @@ Define your ActiveRecord default attributes like this:
 
 <pre><code>en-US:
   activerecord:
-    global-attributes:
-      login: "Login"
     attributes:
+      _all:
+        login: "Login"
       admin:
         login: "Custom Login"
       user:
         name: "Name"</code></pre>
 
-Then use the I18n API as usual. If an attribute for a model is not found, it will be searched in the global attributes.
+Then use the I18n API as usual. If an attribute for a model is not found, it will be searched in _all atributes.
 
 h2. License
 

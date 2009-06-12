@@ -6,7 +6,7 @@ h2. INSTALLATION
 
 Install the plugin from your Rails project root:
 
-<pre><code>script/plugin install git@github.com:dcrec1/activerecord_i18n_defaults.git</code></pre>
+<pre><code>script/plugin install git://github.com/dcrec1/activerecord_i18n_defaults.git</code></pre>
 
 h2. USAGE
 
